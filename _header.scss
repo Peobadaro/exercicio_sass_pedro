@@ -1,0 +1,36 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    @include container;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: $spacing-unit 0;
+}
+
+.nav-item {
+    margin: 0 $spacing-unit;
+}
+
+.nav-link {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    @include hover-effect {
+        color: $accent-color;
+    }
+} 

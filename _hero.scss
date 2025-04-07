@@ -1,0 +1,53 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.hero {
+    height: 100vh;
+    @include flex-center;
+    text-align: center;
+    background: linear-gradient(to bottom, #f5f5f7, $background-color);
+    padding-top: 60px;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 $spacing-unit;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 28px;
+    font-weight: 400;
+    color: $light-text;
+    margin-bottom: 30px;
+}
+
+.hero-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    @include responsive($breakpoint-mobile) {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.link {
+    color: $accent-color;
+    text-decoration: none;
+    font-size: 21px;
+    @include hover-effect {
+        color: $hover-color;
+    }
+
+    i {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+} 
