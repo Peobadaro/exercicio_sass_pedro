@@ -1,67 +1,36 @@
 @use 'variables' as *;
-@use 'mixins' as *;
 
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    @include container;
-    margin: 100px auto;
+section {
+        padding: $padding-section 0;
 }
 
-.product-card {
-    background: $background-color;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    @include hover-effect {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    }
-}
-
-.product-image {
-    overflow: hidden;
-    
-    img {
+.products {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: $grid-columns-desktop;
+        column-gap: $grid-col-gap;
+        row-gap: $grid-row-gap;
         width: 100%;
-        height: auto;
-        @include hover-effect {
-            transform: scale(1.05);
-        }
+}
+
+.product-item {
+        img {
+                    width: 100%;
+                    border-radius: $border-radius-card;
     }
 }
 
-.product-info {
-    padding: $spacing-unit;
-    text-align: center;
-}
+.product-button {
+        display: block;
+        background-color: $button-color;
+        color: $link-color;
+        text-align: center;
+        padding: 8px 0;
+        border-radius: $border-radius-btn;
+        margin-top: 8px;
+        text-decoration: none;
 
-.product-info h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.product-info p {
-    color: $light-text;
-    margin-bottom: 15px;
-}
-
-.product-price {
-    font-size: 21px;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.buy-button {
-    display: inline-block;
-    background-color: $accent-color;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 500;
-    @include hover-effect {
-        background-color: $hover-color;
+        &:hover {
+                    background-color: $button-hover-color;
     }
-} 
+}
